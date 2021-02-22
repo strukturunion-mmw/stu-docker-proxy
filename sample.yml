@@ -1,0 +1,16 @@
+version: '3.8'
+
+networks:
+  dockerland:
+    name: dockerland
+
+services:
+  web:
+    image: nginx
+    container_name: web
+    networks:
+      - dockerland
+    environment:
+      - VIRTUAL_HOST=test.local
+      - LETSENCRYPT_EMAIL=webmaster@test.local
+      - LETSENCRYPT_HOST=test.local
