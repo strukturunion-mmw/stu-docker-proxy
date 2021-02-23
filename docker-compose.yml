@@ -13,7 +13,7 @@ services:
     networks:
       - dockerland
     volumes:
-      - ~/PhpstormProjects/stu-docker-proxy/proxy-gateway/certs:/etc/nginx/certs:rw
+      - ./proxy-gateway/certs:/etc/nginx/certs:rw
       - /var/run/docker.sock:/var/run/docker.sock:ro
     volumes_from:
       - proxy-nginx
